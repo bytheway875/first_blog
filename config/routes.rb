@@ -3,9 +3,9 @@ FirstBlog::Application.routes.draw do
   get '/post/:id' => 'posts#show', as: 'post'
   get '/posts/new' => 'posts#new'
   post '/posts' => 'posts#create'
-  get 'post/:id/edit' => 'posts#edit'
+  get 'post/:id/edit' => 'posts#edit', as: 'edit_post'
   put 'post/:id' => 'posts#update'
-  delete 'post/:id' => 'posts#delete'
+  delete 'post/:id' => 'posts#delete', as: 'delete_post'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

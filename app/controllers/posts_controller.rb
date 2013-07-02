@@ -40,9 +40,8 @@ class PostsController < ApplicationController
 
   def delete
     @post = Post.find(params[:id])
-    if @post.destroy
-      redirect_to posts_path
-    end
+    @post.destroy
+    redirect_to posts_url, notice: 'Post was deleted.'
 
   end
 

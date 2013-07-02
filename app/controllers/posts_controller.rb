@@ -30,9 +30,12 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.new(params[:post])
-    @post.save
-    redirect_to @post
+    @post = Post.find(params[:id])
+    if @post.update_attributes(params[:post])
+      redirect_to @post
+    else
+      render :action => "edit"
+    end
   end
 
   def delete

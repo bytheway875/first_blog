@@ -1,4 +1,4 @@
 %h1= "#{@name}'s Blog"
 
-- @posts.each do |p|
-  %h3= link_to p.title, p
+- @posts.each do |post|
+  %h3= link_to post.title, post_path(post)

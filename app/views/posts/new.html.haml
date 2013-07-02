@@ -1,0 +1,11 @@
+%h1 New Blog Post
+= form_for @post do |p|
+  = p.label :title
+  %br
+  = p.text_field :title
+  %br
+  =p.label :body
+  %br
+  = p.text_area :body
+  %br
+  = p.submit
